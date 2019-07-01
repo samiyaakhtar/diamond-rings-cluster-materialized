@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io/hellorings:hello-rings-master-4312"
+          image: "helloringsazure.azurecr.io/diamondrings:diamond-rings-master-4454"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -38,10 +38,10 @@ kind: Ring
 metadata:
   name: diamond-rings-v1-master
   contact: samiya@testing.com
-  branchName: master # Set by pipeline
-  buildId: 4312 # Set by pipeline
-  buildDate: 2019-06-25T08:45:08.864258Z # Set by pipeline
-  commitId: b08fc564fa7aed09dbd46241b7a0d35e978ee0bb # Set by pipeline
+  branchName:  # Set by pipeline
+  buildId: 4454 # Set by pipeline
+  buildDate:  # Set by pipeline
+  commitId:  # Set by pipeline
 spec:
   # Deploy to environment
   deploy: true
