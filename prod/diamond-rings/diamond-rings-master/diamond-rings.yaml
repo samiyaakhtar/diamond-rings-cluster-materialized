@@ -39,7 +39,7 @@ metadata:
   name: diamond-rings-v1-master
   contact: samiya@testing.com
   branchName:  # Set by pipeline
-  buildId: 4638 # Set by pipeline
+  buildId: 4671 # Set by pipeline
   buildDate:  # Set by pipeline
   commitId:  # Set by pipeline
 spec:
