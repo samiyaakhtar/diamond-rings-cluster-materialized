@@ -3,9 +3,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: diamond-rings-v1-master
+  name: hello-bedrock-v1-master
   labels:
-    name: diamond-rings
+    name: hello-bedrock
     version: v1
     ring: master
     group: CORE
@@ -13,19 +13,19 @@ spec:
   replicas: 1000
   selector:
     matchLabels:
-      name: diamond-rings
+      name: hello-bedrock
       version: v1
       ring: master
   template:
     metadata:
       labels:
-        name: diamond-rings
+        name: hello-bedrock
         version: v1
         ring: master
     spec:
       containers:
         - name: ring-chart
-          image: "helloringsazure.azurecr.io:hello-bedrock-master-5120"
+          image: "helloringsazure.azurecr.io:hello-bedrock-master-5128"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -36,8 +36,8 @@ spec:
 apiVersion: rings.microsoft.com/v1alpha1
 kind: Ring
 metadata:
-  name: diamond-rings-v1-master
-  contact: samiya@testing.com
+  name: hello-bedrock-v1-master
+  contact: samiya@containerjourney.com
   branchName: bar # Set by pipeline
   buildId: 12345 # Set by pipeline
   buildDate: 2.0190624e+07 # Set by pipeline
@@ -51,7 +51,7 @@ spec:
     - https
     - internal
   routing:
-    service: diamond-rings
+    service: hello-bedrock
     version: v1
     branch: feature/48883-add-search
     group: CORE
