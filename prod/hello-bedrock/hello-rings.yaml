@@ -8,7 +8,7 @@ metadata:
     name: hello-bedrock
     version: v1
     ring: master
-    group: CORE
+    group: AWESOME
 spec:
   replicas: 1000
   selector:
@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "helloringsazure.azurecr.io:hello-bedrock-master-5132"
+          image: "helloringsazure.azurecr.io:hello-bedrock-master-5141"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -54,7 +54,7 @@ spec:
     service: hello-bedrock
     version: v1
     branch: feature/48883-add-search
-    group: CORE
+    group: AWESOME
     ports:
       - 8080
     initialUsers:
