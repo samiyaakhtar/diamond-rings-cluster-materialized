@@ -1,4 +1,5 @@
 ---
+---
 # Source: ring-chart/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -25,12 +26,13 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io:hello-bedrock-master-5545"
+          image: "hellorings.azurecr.io:hello-bedrock-master-5577"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
 
 ---
+
 # Source: ring-chart/templates/ring.yaml
 # Source: hello-ring/templates/ring.yaml
 apiVersion: rings.microsoft.com/v1alpha1
@@ -60,4 +62,5 @@ spec:
     initialUsers:
       - bill@contoso.com
       - ted@contoso.com
+
 
