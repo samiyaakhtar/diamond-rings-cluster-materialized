@@ -1,0 +1,66 @@
+---
+---
+# Source: ring-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-service-hooks-v1-master
+  labels:
+    name: hello-service-hooks
+    version: v1
+    ring: master
+    group: AWESOME
+spec:
+  replicas: 1000
+  selector:
+    matchLabels:
+      name: hello-service-hooks
+      version: v1
+      ring: master
+  template:
+    metadata:
+      labels:
+        name: hello-service-hooks
+        version: v1
+        ring: master
+    spec:
+      containers:
+        - name: ring-chart
+          image: "hellorings.azurecr.io:hello-service-hooks-master-6184"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+
+---
+
+# Source: ring-chart/templates/ring.yaml
+# Source: hello-ring/templates/ring.yaml
+apiVersion: rings.microsoft.com/v1alpha1
+kind: Ring
+metadata:
+  name: hello-service-hooks-v1-master
+  contact: samiya@containerjourney.com
+  branchName: bar # Set by pipeline
+  buildId: 12345 # Set by pipeline
+  buildDate: 2.0190624e+07 # Set by pipeline
+  commitId: 43defcs # Set by pipeline
+spec:
+  # Deploy to environment
+  deploy: true
+  entryPoints:
+    # Source of traffic (eg: 80 or 443)
+    - http
+    - https
+    - internal
+  routing:
+    service: hello-service-hooks
+    version: v1
+    branch: feature/48883-add-search
+    group: AWESOME
+    ports:
+      - 8080
+    initialUsers:
+      - bill@contoso.com
+      - ted@contoso.com
+
+
