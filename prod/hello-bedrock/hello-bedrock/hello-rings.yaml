@@ -11,7 +11,7 @@ metadata:
     ring: master
     group: AWESOME
 spec:
-  replicas: 1000
+  replicas: 3
   selector:
     matchLabels:
       name: hello-bedrock
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io:hello-bedrock-master-9432"
+          image: "hellorings.azurecr.io:hello-bedrock-master-9467"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

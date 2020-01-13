@@ -11,7 +11,7 @@ metadata:
     ring: master
     group: AWESOME
 spec:
-  replicas: 1000
+  replicas: 3
   selector:
     matchLabels:
       name: hello-service-hooks
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io:hello-service-hooks-master-8032"
+          image: "hellorings.azurecr.io:hello-service-hooks-master-9469"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
