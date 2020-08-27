@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io:hello-service-hooks-master-26484"
+          image: "hellorings.azurecr.io:hello-service-hooks-master-26521"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
