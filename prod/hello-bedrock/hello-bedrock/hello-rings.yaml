@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: ring-chart
-          image: "hellorings.azurecr.io:hello-bedrock-master-27661"
+          image: "hellorings.azurecr.io:hello-bedrock-master-27698"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
